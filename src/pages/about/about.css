@@ -1,0 +1,27 @@
+body {
+  padding: 3% 5%;
+}
+
+.component_banner {
+  color: #FF6060;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav_bar {
+  color: #FF6060;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.nav_bar p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.nav_bar p.p_1 {
+  margin-right: 50px;
+}
+
+/*# sourceMappingURL=about.css.map */

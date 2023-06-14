@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import About from './components/about/about.jsx';
-import Error from './components/error/error';
-import Logement from './components/logement/logement';
-import Home from './components/home/home';
+import About from './pages/about/about.jsx';
+import Error from './pages/error/error.jsx';
+import Logement from './pages/logement/logement.jsx';
+import Home from './pages/home/home.jsx';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,12 +16,10 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        
-        <Route path='/app' element={<App/>} />
+        <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/*" element={<Error/>} />
         <Route path="/logement" element={<Logement/>} />
-        <Route path="/home" element={<Home/>} />
       </Routes>
     </Router>
   </React.StrictMode>

@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass": "sass ./src/components/about/about.scss:./src/components/about/about.css &&  sass ./src/components/logement/logement.scss:./src/components/logement/logement.css && sass ./src/components/home/home.scss:./src/components/home/home.css && sass ./src/components/error/error.scss:./src/components/error/error.css"
+    "sass": "sass --watch ./main.scss:./src/pages/about/about.css && ./main.scss:./src/pages/logement/logement.css && ./main.scss:./src/pages/home/home.css && ./main.scss:./src/pages/error/error.css"
   },
   "eslintConfig": {
     "extends": [
