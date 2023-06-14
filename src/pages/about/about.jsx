@@ -1,5 +1,6 @@
 import './about.css';
-import Banner from '../../components/Banner';
+import Banner from '../../components/Banner.jsx';
+import Footer from '../../components/Footer.jsx';
 
 
 function About() {
@@ -7,6 +8,7 @@ function About() {
         <div>
             <Banner />
             <p>Ceci est la page about</p>
+            <Footer />
         </div>
     )
 }

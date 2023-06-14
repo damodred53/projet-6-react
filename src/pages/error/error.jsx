@@ -1,5 +1,6 @@
 import './error.css';
 import Banner from '../../components/Banner';
+import Footer from '../../components/Footer';
 
 function Error() {
     return(
@@ -9,6 +10,7 @@ function Error() {
             <div>
                 <h1 className='test'>Il y a une grosse erreur</h1>
             </div>
+            <Footer />
         </div>
     )
 }

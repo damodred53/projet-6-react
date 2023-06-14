@@ -8,7 +8,7 @@ function Banner() {
 
     return (
         <div className='component_banner'>
-            <div>
+            <div className='component_banner_logo'>
                 <img src={logo} alt='première lettre'/>
                 <img src={logo2} alt='deuxième lettre'/>
                 <img src={logo3} alt='troisième lettre'/>

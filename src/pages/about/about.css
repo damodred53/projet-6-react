@@ -8,6 +8,9 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
+.component_banner img {
+  margin-right: 5px;
+}
 
 .nav_bar {
   color: #FF6060;

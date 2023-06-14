@@ -14,6 +14,9 @@ body{
 .component_banner{
 color: $colorWriting;
 @include flex_maker();
+    img{
+        margin-right: 5px;
+    }
 }
 
 .nav_bar{
