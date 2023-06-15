@@ -1,13 +1,18 @@
+import Card from '../../components/Card';
 import './home.css';
-import Banner from '../../components/Banner';
-import Footer from '../../components/Footer';
+
 
 function Home() {
     return(
         <div>
-            <Banner />
-            <p>Ceci est la page accueil</p>
-            <Footer />
+            <div>
+                <h1 className='home_title'>Chez vous, partout et ailleurs</h1>
+            </div>
+            <div className='background_card'>
+                <div className='home_card'>
+                <Card />
+                </div>
+            </div>
         </div>
     )
 }

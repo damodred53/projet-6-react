@@ -2,6 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Montserrat&family=Spectral:ital,wght@0,300;0,400;1,300;1,400&display=swap");
 /* Déclaration des variables */
 /*Déclaration des mixins*/
+* {
+  font-family: Montserrat;
+}
+
 /* Début du code sass */
 body {
   padding: 3% 5%;
@@ -51,6 +55,43 @@ body {
 }
 .component_footer img {
   margin-right: 5px;
+}
+
+/* page d'accueil ps : le background image et son url sont gérés directement par le css*/
+.home_title {
+  mix-blend-mode: darken;
+  border-radius: 25px;
+  height: 200px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 48px;
+}
+
+.home_card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 5%;
+  padding: 3% 5%;
+}
+
+.card_logement {
+  height: 300px;
+  background: linear-gradient(180deg, rgba(255, 96, 96, 0.5) 0%, rgb(255, 96, 96) 100%);
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-bottom: 5%;
+  padding-left: 5%;
+}
+
+.background_card {
+  background-color: #f7f7f7;
+  border-radius: 25px;
 }
 
 /*# sourceMappingURL=about.css.map */

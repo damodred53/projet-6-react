@@ -7,6 +7,9 @@ import Error from './pages/error/error.jsx';
 import Logement from './pages/logement/logement.jsx';
 import Home from './pages/home/home.jsx';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Banner from './components/Banner';
+import Footer from './components/Footer';
+/*import Cart from './components/Card';*/
 
 
 
@@ -14,6 +17,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Banner />
     <Router>
       <Routes>
         <Route path="/" element={<Home/>} />
@@ -22,6 +26,7 @@ root.render(
         <Route path="/logement" element={<Logement/>} />
       </Routes>
     </Router>
+    <Footer />
   </React.StrictMode>
 );
 
