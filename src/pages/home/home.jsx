@@ -5,7 +5,7 @@ import './home.css';
 function Home() {
     return(
         <div>
-            <div>
+            <div className='background_title'>
                 <h1 className='home_title'>Chez vous, partout et ailleurs</h1>
             </div>
             <div className='background_card'>

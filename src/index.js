@@ -9,7 +9,7 @@ import Home from './pages/home/home.jsx';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
-/*import Cart from './components/Card';*/
+
 
 
 
@@ -26,9 +26,13 @@ root.render(
         <Route path="/logement" element={<Logement/>} />
       </Routes>
     </Router>
-    <Footer />
   </React.StrictMode>
 );
+const footer = ReactDOM.createRoot(document.getElementById('footer_kasa'));
+footer.render(
+  <Footer />
+);
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

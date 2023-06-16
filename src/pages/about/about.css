@@ -7,7 +7,7 @@
 }
 
 /* Début du code sass */
-body {
+#root {
   padding: 3% 5%;
 }
 
@@ -29,12 +29,27 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
+.nav_bar p {
+  font-size: 24px;
+  font-weight: 700;
+}
 .nav_bar p:hover {
   text-decoration: underline;
   cursor: pointer;
 }
+@media (max-width: 520px) {
+  .nav_bar p {
+    font-size: 15px;
+  }
+}
 .nav_bar p.p_1 {
   margin-right: 50px;
+}
+@media (max-width: 510px) {
+  .nav_bar {
+    display: block;
+    margin: 0px;
+  }
 }
 
 /* Composant footer */
@@ -59,8 +74,6 @@ body {
 
 /* page d'accueil ps : le background image et son url sont gérés directement par le css*/
 .home_title {
-  mix-blend-mode: darken;
-  border-radius: 25px;
   height: 200px;
   color: white;
   display: flex;
@@ -69,6 +82,11 @@ body {
   margin-top: 30px;
   font-size: 48px;
 }
+@media (max-width: 768px) {
+  .home_title {
+    padding-left: 5%;
+  }
+}
 
 .home_card {
   display: grid;
@@ -76,22 +94,55 @@ body {
   column-gap: 5%;
   padding: 3% 5%;
 }
+@media (max-width: 768px) {
+  .home_card {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0%;
+    margin: 0%;
+    row-gap: 30px;
+  }
+}
 
 .card_logement {
   height: 300px;
-  background: linear-gradient(180deg, rgba(255, 96, 96, 0.5) 0%, rgb(255, 96, 96) 100%);
   border-radius: 10px;
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: end;
-  padding-bottom: 5%;
-  padding-left: 5%;
+  margin-top: 15%;
+}
+@media (max-width: 768px) {
+  .card_logement {
+    margin: 0%;
+    padding: 0%;
+  }
+}
+.card_logement .image_background_card {
+  object-fit: cover;
+  max-width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.card_logement p {
+  position: absolute;
+  color: whitesmoke;
+  font-weight: 700;
+  padding-left: 1%;
+  max-width: 150px;
 }
 
 .background_card {
   background-color: #f7f7f7;
   border-radius: 25px;
+  margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+  .background_card {
+    background-color: white;
+    padding: 0%;
+    margin: 0%;
+  }
 }
 
 /*# sourceMappingURL=about.css.map */
