@@ -18,8 +18,8 @@ function Banner() {
             </div>
             <div>
             <nav className='nav_bar'>
-                <p className='p_1'>Accueil</p>
-                <p >A propos</p>
+                <Link to="/" className='underline_stop'><p className='p_1'>Accueil</p></Link>
+                <Link to="/about" className='underline_stop'><p >A propos</p></Link>
             </nav>
             </div>
         </div>

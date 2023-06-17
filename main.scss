@@ -60,7 +60,10 @@ $colorWriting :#FF6060;
         color:whitesmoke;
         font-weight: 700;
         padding-left: 1%;
-        max-width: 150px; 
+        max-width: 220px; 
+        @media (max-width:1000px){
+            max-width: 150px;
+        }
     }
     
 }
@@ -83,13 +86,15 @@ color: $colorWriting;
     
 }
 .nav_bar{
-    color: #FF6060;
+    text-decoration: none;
     width: auto;
-
     @include flex_maker();
     p{
         font-size: 24px;
         font-weight: 700;
+        text-decoration: none;
+        color: #FF6060;
+        
         &:hover{
             text-decoration: underline;
             cursor: pointer;
@@ -102,6 +107,9 @@ color: $colorWriting;
     p.p_1{
         margin-right: 50px;
         
+    }
+    .underline_stop{
+        text-decoration: none;
     }
     @media (max-width:510px)
     {

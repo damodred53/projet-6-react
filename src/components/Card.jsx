@@ -1,10 +1,6 @@
 import dataHouse from "../data";
 
  function Card() {
-    
-    
-    
-
      
     return(
         dataHouse.map((e,id, index) => 

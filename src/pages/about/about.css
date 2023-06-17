@@ -23,7 +23,7 @@
 }
 
 .nav_bar {
-  color: #FF6060;
+  text-decoration: none;
   width: auto;
   display: flex;
   flex-direction: row;
@@ -32,6 +32,8 @@
 .nav_bar p {
   font-size: 24px;
   font-weight: 700;
+  text-decoration: none;
+  color: #FF6060;
 }
 .nav_bar p:hover {
   text-decoration: underline;
@@ -44,6 +46,9 @@
 }
 .nav_bar p.p_1 {
   margin-right: 50px;
+}
+.nav_bar .underline_stop {
+  text-decoration: none;
 }
 @media (max-width: 510px) {
   .nav_bar {
@@ -129,7 +134,12 @@
   color: whitesmoke;
   font-weight: 700;
   padding-left: 1%;
-  max-width: 150px;
+  max-width: 220px;
+}
+@media (max-width: 1000px) {
+  .card_logement p {
+    max-width: 150px;
+  }
 }
 
 .background_card {
