@@ -209,7 +209,7 @@ color: $colorWriting;
 }
 
 .paragraphe_about{
-    display: none;
+    /*display: none;*/
     color: #FF6060;
     background-color: #f7f7f7;
     margin-top: auto;
@@ -218,11 +218,13 @@ color: $colorWriting;
     font-size: 20px;
     padding-top: 2%;
     padding-left: 2%;
+    
 }
 
 .part_list_about {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #FF6060;
     border-radius: 10px;
     color: white;
@@ -231,10 +233,20 @@ color: $colorWriting;
 }
 .icon_about{
  height: 14px;
- padding-top: 2%;
+ 
+ }
 
-/*&:active{
-    transform: rotate(90deg);
-    transition: all .2s;
-}*/
+.div_about{
+    transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
+
+.active{
+    transform: rotate(-180deg);
+    transition: all .2s;
+}
+
+
+
+
+
+
