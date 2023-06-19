@@ -78,6 +78,15 @@
 }
 
 /* page d'accueil ps : le background image et son url sont gérés directement par le css*/
+.background_title {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../assets/IMG.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(95%);
+  border-radius: 25px;
+}
+
 .home_title {
   height: 200px;
   color: white;
@@ -153,6 +162,62 @@
     padding: 0%;
     margin: 0%;
   }
+}
+
+/* intégration de la page about */
+.picture_about {
+  max-height: 200px;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 47%;
+  border-radius: 25px;
+  filter: brightness(75%);
+  margin-top: 30px;
+}
+
+.liste_about {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  width: 85%;
+  padding-left: 7%;
+  padding-right: 7%;
+  margin-top: 30px;
+}
+
+.listing_about {
+  margin-bottom: 20px;
+}
+
+.paragraphe_about {
+  display: none;
+  color: #FF6060;
+  background-color: #f7f7f7;
+  margin-top: auto;
+  height: 90px;
+  border-radius: 10px;
+  font-size: 20px;
+  padding-top: 2%;
+  padding-left: 2%;
+}
+
+.part_list_about {
+  display: flex;
+  justify-content: space-between;
+  background-color: #FF6060;
+  border-radius: 10px;
+  color: white;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.icon_about {
+  height: 14px;
+  padding-top: 2%;
+  /*&:active{
+      transform: rotate(90deg);
+      transition: all .2s;
+  }*/
 }
 
 /*# sourceMappingURL=about.css.map */
