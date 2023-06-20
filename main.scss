@@ -58,6 +58,8 @@ $colorWriting :#FF6060;
         max-width: 100%;
         height: 100%;   
         border-radius: 10px;
+        background-position: center;
+        
     }
     p{
         position: absolute;
@@ -167,11 +169,15 @@ color: $colorWriting;
 
 .home_card{
     @include card_menu();
+}
+
+.card_logement{
+    @include card(); 
+    position: relative;
     
 }
-.card_logement{
-    @include card();
-}
+
+
 .background_card{
     background-color: #f7f7f7;
     border-radius: 25px;
@@ -244,7 +250,6 @@ color: $colorWriting;
     transform: rotate(-180deg);
     transition: all .2s;
 }
-
 
 
 
