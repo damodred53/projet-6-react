@@ -2,7 +2,7 @@ import './about.css';
 import IMG_2 from '../../assets/IMG_2.png';
 import Collapse from '../../components/Collapse';
 import dataCollapse from "../../data_about";
-
+import { useEffect } from 'react';
 
 
 function About() {
