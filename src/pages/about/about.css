@@ -191,18 +191,27 @@
   margin-bottom: 20px;
 }
 
-.paragraphe_about {
+.div_about {
   color: #FF6060;
   background-color: #f7f7f7;
   margin-top: auto;
-  height: 100px;
+  /*max-height: max-content;*/
   border-radius: 10px;
   font-size: 20px;
   padding-top: 2%;
   padding-left: 2%;
   padding-right: 2%;
   content-visibility: auto;
+  /*animation: heightx 0.5s linear forwards ;
+  transition: height 2s cubic-bezier(0.4, 0, 0.2, 1)*/
+}
+
+/*animation pour les collapses proposant plusieurs éléments en paragraphe */
+.multielement_about {
+  height: max-content;
   animation: heightx 0.5s linear forwards;
+  /*animation: heighty 0.5s linear forwards ;*/
+  transition: height 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes heightx {
@@ -210,7 +219,7 @@
     height: 0px;
   }
   100% {
-    height: 100px;
+    height: 30px;
   }
 }
 .closing_animation {
@@ -219,12 +228,44 @@
 
 @keyframes heighty {
   0% {
+    height: 30px;
+  }
+  100% {
+    height: 0px;
+  }
+}
+/* animation pour les éléments ne contenant qu'un seul bloc */
+.onlyoneelement_about {
+  /*height: max-content;*/
+  animation: heightOnex 0.5s linear forwards;
+  /*animation: heightOney 0.5s linear forwards ;*/
+  transition: height 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes heightOnex {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 100px;
+  }
+}
+.closing_animation {
+  animation: heightOney 1s ease forwards;
+}
+
+@keyframes heightOney {
+  0% {
     height: 100px;
   }
   100% {
     height: 0px;
   }
 }
+.paragraphe_about {
+  padding-bottom: 2%;
+}
+
 .part_list_about {
   display: flex;
   justify-content: space-between;
@@ -239,10 +280,6 @@
 .icon_about {
   height: 14px;
   cursor: pointer;
-}
-
-.div_about {
-  transition: height 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .active {
