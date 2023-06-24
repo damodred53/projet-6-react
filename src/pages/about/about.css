@@ -189,13 +189,14 @@
 
 .listing_about {
   margin-bottom: 20px;
+  list-style-type: none;
 }
 
 .div_about {
   color: #FF6060;
   background-color: #f7f7f7;
   margin-top: auto;
-  /*max-height: max-content;*/
+  max-height: auto;
   border-radius: 10px;
   font-size: 20px;
   padding-top: 2%;
@@ -210,7 +211,6 @@
 .multielement_about {
   height: max-content;
   animation: heightx 0.5s linear forwards;
-  /*animation: heighty 0.5s linear forwards ;*/
   transition: height 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -247,7 +247,7 @@
     height: 0px;
   }
   100% {
-    height: 100px;
+    height: 120px;
   }
 }
 .closing_animation {
@@ -256,7 +256,7 @@
 
 @keyframes heightOney {
   0% {
-    height: 100px;
+    height: 120;
   }
   100% {
     height: 0px;
@@ -320,6 +320,95 @@
 
 .description_collapse_logement, .equipements_collapse_logement {
   width: 47%;
+}
+
+.rating_tags {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item_tags {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.item_tags p {
+  background-color: #FF6060;
+  padding: 1% 5%;
+  color: white;
+  margin-right: 5%;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+}
+
+.item_rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 12%;
+}
+.item_rating img {
+  height: 30%;
+}
+
+.title_host {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #FF6060;
+}
+.title_host h1 {
+  font-size: 3em;
+  margin-bottom: 1%;
+}
+.title_host .title_location {
+  width: 60%;
+}
+
+.name_picture {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 11%;
+}
+.name_picture .picture_logement {
+  border-radius: 50%;
+  height: 70%;
+}
+
+/* intégration du carouselle dans la page logement */
+.image_background_carousel {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.buttons_logement {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0% 2%;
+}
+.buttons_logement .button_logement {
+  background-color: rgba(0, 0, 0, 0);
+  border-style: none;
+}
+
+.index_picture_logement {
+  position: relative;
+  left: 50%;
+  bottom: 10%;
+  color: white;
 }
 
 /*# sourceMappingURL=about.css.map */

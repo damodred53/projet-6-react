@@ -1,9 +1,12 @@
 import derouleur from "../assets/derouleur.png";
 import { useState } from "react";
+import { useEffect } from "react";
 
 
 function Collapse({titre, paragraphe, id}) {
 const [selected, setSelected] = useState(false);
+
+
 
     
 function handleClick() {
