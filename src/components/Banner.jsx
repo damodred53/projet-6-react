@@ -16,12 +16,12 @@ function Banner() {
                 <img src={logo3} alt='troisième lettre'/>
                 <img src={logo4} alt='quatrième lettre'/>
             </div>
-            <div>
+            
             <nav className='nav_bar'>
                 <Link to="/" className='underline_stop'><p className='p_1'>Accueil</p></Link>
                 <Link to="/about" className='underline_stop'><p >A propos</p></Link>
             </nav>
-            </div>
+            
         </div>
     )
 

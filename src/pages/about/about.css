@@ -18,16 +18,36 @@
   flex-direction: row;
   justify-content: space-between;
 }
+@media (max-width: 520px) {
+  .component_banner {
+    align-items: center;
+    text-transform: uppercase;
+  }
+}
 .component_banner img {
   margin-right: 5px;
 }
 
+@media (max-width: 520px) {
+  .component_banner_logo {
+    white-space: nowrap;
+  }
+  .component_banner_logo img {
+    width: 15%;
+  }
+}
+
 .nav_bar {
   text-decoration: none;
-  width: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+@media (max-width: 520px) {
+  .nav_bar {
+    width: 40%;
+    justify-content: space-evenly;
+  }
 }
 .nav_bar p {
   font-size: 24px;
@@ -41,20 +61,19 @@
 }
 @media (max-width: 520px) {
   .nav_bar p {
-    font-size: 15px;
+    font-size: 10px;
   }
 }
 .nav_bar p.p_1 {
   margin-right: 50px;
 }
+@media (max-width: 520px) {
+  .nav_bar p.p_1 {
+    margin-right: 15px;
+  }
+}
 .nav_bar .underline_stop {
   text-decoration: none;
-}
-@media (max-width: 510px) {
-  .nav_bar {
-    display: block;
-    margin: 0px;
-  }
 }
 
 /* Composant footer */
@@ -99,6 +118,8 @@
 @media (max-width: 768px) {
   .home_title {
     padding-left: 5%;
+    font-size: 24px;
+    padding-right: 3%;
   }
 }
 
@@ -186,12 +207,17 @@
   padding-right: 7%;
   margin-top: 30px;
 }
+@media (max-width: 520px) {
+  .liste_about {
+    width: 100%;
+    padding-left: 0%;
+  }
+}
 
 .listing_about {
   margin-bottom: 20px;
   list-style-type: none;
 }
-
 .div_about {
   color: #FF6060;
   background-color: #f7f7f7;
@@ -261,6 +287,11 @@
 .paragraphe_about {
   padding-bottom: 2%;
 }
+@media (max-width: 520px) {
+  .paragraphe_about {
+    font-size: 14px;
+  }
+}
 
 .part_list_about {
   display: flex;
@@ -271,6 +302,17 @@
   color: white;
   padding-left: 2%;
   padding-right: 2%;
+}
+@media (max-width: 520px) {
+  .part_list_about {
+    max-height: 30px;
+    letter-spacing: 1px;
+  }
+}
+@media (max-width: 520px) {
+  .part_list_about h2 {
+    font-size: 15px;
+  }
 }
 
 .icon_about {
@@ -288,9 +330,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   color: #FF6060;
   margin-top: 5%;
+  min-height: 700px;
 }
 .div_error .underline_stop {
   text-decoration: none;
@@ -299,12 +342,34 @@
   text-decoration: underline;
 }
 .div_error .title_error {
-  font-weight: bold;
-  font-size: 288px;
+  font-weight: 900;
+  font-size: 25em;
+  text-align: center;
+  width: 100%;
   margin: 0%;
+}
+@media (max-width: 900px) {
+  .div_error .title_error {
+    font-size: 15em;
+  }
+}
+@media (max-width: 520px) {
+  .div_error .title_error {
+    font-size: 5em;
+  }
 }
 .div_error h2 {
   padding-top: 3%;
+}
+@media (max-width: 900px) {
+  .div_error h2 {
+    text-align: center;
+  }
+}
+@media (max-width: 520px) {
+  .div_error h2 {
+    text-align: center;
+  }
 }
 
 /* intégration page logement */
