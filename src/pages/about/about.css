@@ -330,21 +330,21 @@
 }
 
 .item_tags {
+  gap: 5%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 .item_tags p {
   background-color: #FF6060;
-  padding: 1% 5%;
+  padding: 1% 15%;
   color: white;
-  margin-right: 5%;
+  white-space: nowrap;
   border-radius: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: max-content;
 }
 
 .item_rating {
@@ -384,6 +384,10 @@
 }
 
 /* intégration du carouselle dans la page logement */
+.carousel {
+  padding-top: 2%;
+}
+
 .image_background_carousel {
   height: 500px;
   background-size: cover;

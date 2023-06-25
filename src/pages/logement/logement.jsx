@@ -6,16 +6,80 @@ import { useParams } from 'react-router-dom';
 import Collapse from '../../components/Collapse';
 import Étoiles from '../../components/Étoiles';
 import Carousel from '../../components/Carousel';
+import { useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 
+function Logement() {
+  const {id} = useParams();
+  const navigate = useNavigate();
+  let researchItem
 
+    
+  
+  useEffect(() => {
+    if (!researchItem)
+    navigate('/*');
+  },[researchItem])
+      
+  try {
+    researchItem = dataHouse.find((item) => item.id === id);
+  
+    
+      if (!researchItem) {
+        throw new Error('Logement introuvable');
+      }
+      
+     // Ajoutez researchItem comme dépendance du useEffect
+  
+  } catch (error) {
+    console.error("Erreur lors de la recherche du logement :", error);
+    
+    return null;
+  }
 
-function Logement({ title, e }) {
+  
+  console.log(researchItem);
+  
 
-    const {id} = useParams();
-    const researchItem = dataHouse.find((item) => item.id === id);
+  
+  
+     
+
+    /*let researchItem;
+    useEffect(() => {
+      try {
+        researchItem = dataHouse.find((item) => item.id === id);
+  
+        if (!researchItem) {
+          throw new Error('Logement introuvable');
+        }
+  
+        console.log(researchItem);
+      } catch (error) {
+        console.error("Erreur lors de la recherche du logement :", error);
+        navigate('/*');
+        return null;
+      }
+    }, []);*/
+    
+    
+    
+   
+      
+     
+        
+    
+  
+  
+
+    
+  
+    
     
     return (
       <div>
+        
+
         <div>
             <Carousel 
             item = {researchItem.pictures}/>
@@ -26,6 +90,9 @@ function Logement({ title, e }) {
       <div>
         <div className='title_host'>
           <div className='title_location'>
+
+       
+
             <h1>{researchItem.title}</h1>
             <div className="item_location"><strong>{researchItem.location}</strong></div>
           </div>

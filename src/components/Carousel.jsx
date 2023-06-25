@@ -34,7 +34,7 @@ return (
                             <button className="button_logement" style={length === 1 ? { display: "none" } : {}} onClick={handleNext}><img src={flèche_suivant} alt="photo suivante"/></button>
                             
                         </div>
-                        <span className="index_picture_logement" style={length === 1 ? { display: "none" } : {}}>{index+1}/{item.length}</span>
+                        <span className="index_picture_logement" style={length === 1 ? { display: "none" } : {}}><strong>{index+1}/{item.length}</strong></span>
                     </div>
                 
             
