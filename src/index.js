@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import reportWebVitals from './reportWebVitals';
 import About from './pages/about/about.jsx';
 import Error from './pages/error/error.jsx';
@@ -11,22 +10,18 @@ import Banner from './components/Banner';
 import Footer from './components/Footer';
 
 
-
-
-
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-    <Banner />
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/*" element={<Error/>} />
-        <Route path="/logement" element={<Logement/>} />
-        <Route path="/logement/:id" element={<Logement/>} />
-      </Routes>
+      <Banner />
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/about" element={<About/>} />
+            <Route path="/*" element={<Error/>} />
+            <Route path="/logement" element={<Logement/>} />
+            <Route path="/logement/:id" element={<Logement/>} />
+          </Routes>
     </Router>
   </React.StrictMode>
 );

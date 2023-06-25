@@ -4,7 +4,6 @@ import dataHouse from '../data';
 
 function Card({ e }) {
   
-
   return (
     dataHouse.map((item, id, index) => (
       <Link to={`/logement/${item.id}`}  key={`${id}-${index}`}>

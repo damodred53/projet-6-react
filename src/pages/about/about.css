@@ -1,11 +1,11 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Montserrat&family=Spectral:ital,wght@0,300;0,400;1,300;1,400&display=swap");
-/* Déclaration des variables */
-/*Déclaration des mixins*/
 * {
   font-family: Montserrat;
 }
 
+/* Déclaration des variables */
+/*Déclaration des mixins*/
 /* Début du code sass */
 #root {
   padding: 3% 5%;
@@ -142,7 +142,7 @@
 }
 .card_logement p {
   position: absolute;
-  color: whitesmoke;
+  color: white;
   font-weight: 700;
   padding-left: 2%;
   max-width: 220px;
@@ -203,8 +203,6 @@
   padding-left: 2%;
   padding-right: 2%;
   content-visibility: auto;
-  /*animation: heightx 0.5s linear forwards ;
-  transition: height 2s cubic-bezier(0.4, 0, 0.2, 1)*/
 }
 
 /*animation pour les collapses proposant plusieurs éléments en paragraphe */
@@ -236,9 +234,7 @@
 }
 /* animation pour les éléments ne contenant qu'un seul bloc */
 .onlyoneelement_about {
-  /*height: max-content;*/
   animation: heightOnex 0.5s linear forwards;
-  /*animation: heightOney 0.5s linear forwards ;*/
   transition: height 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -318,7 +314,8 @@
   justify-content: space-between;
 }
 
-.description_collapse_logement, .equipements_collapse_logement {
+.description_collapse_logement,
+.equipements_collapse_logement {
   width: 47%;
 }
 

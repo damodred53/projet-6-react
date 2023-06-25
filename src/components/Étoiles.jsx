@@ -6,9 +6,9 @@ const Étoiles = ({ starsfull, index }) => {
   
     for (let i = 1; i <= 5; i++) {
       if (i <= starsfull) {
-        étoiles.push(<img src={star_active} key={index} alt="étoile" />);
+        étoiles.push(<img src={star_active} key={`${index}-${i}`} alt="étoile" />);
       } else {
-        étoiles.push(<img src={star_inactive} key={index} alt="étoile" />);
+        étoiles.push(<img src={star_inactive} key={`${index}-${i}`} alt="étoile" />);
       }
     }
   

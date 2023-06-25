@@ -1,450 +1,457 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Montserrat&family=Spectral:ital,wght@0,300;0,400;1,300;1,400&display=swap');
-$image-url:"./src/assets/IMG.png";
+
+
+* {
+    font-family: Montserrat;
+  }
+
 /* Déclaration des variables */
-$colorWriting :#FF6060;
+
+$image-url: "./src/assets/IMG.png";
+$colorWriting_paragraph: white;
+$colorWriting: #FF6060;
+$border_radius: 10px;
+
 /*Déclaration des mixins*/
-*{
-    font-family: Montserrat;
-}
+
 @mixin flex_maker {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
+
 @mixin flex_maker_column {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
+
 @mixin font_footer {
-    font-family: Montserrat;
-    font-weight: 500;
-    font: size 24px; 
-    color: white;
+  font-family: Montserrat;
+  font-weight: 500;
+  font: size 24px;
+  color: $colorWriting_paragraph;
 }
+
 @mixin espacement_logo {
-    margin-right: 5px;
+  margin-right: 5px;
 }
+
 @mixin card_menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 5%;
+  padding: 3% 5%;
+
+  @media (max-width: 768px) {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 5%;
-    padding: 3% 5%;
-
-    @media (max-width:768px)
-    {
-        display: grid;
-        grid-template-columns: 1fr;
-        padding: 0%;
-        margin: 0%;
-        row-gap: 30px;
-    }
+    grid-template-columns: 1fr;
+    padding: 0%;
+    margin: 0%;
+    row-gap: 30px;
+  }
 }
+
 @mixin card {
-    height: 300px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    margin-top: 15%;
-    @media (max-width:768px)
-    {
-      margin: 0%;
-      padding: 0%;
+  height: 300px;
+  border-radius: $border_radius;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin-top: 15%;
+
+  @media (max-width: 768px) {
+    margin: 0%;
+    padding: 0%;
+  }
+
+  .image_background_card {
+    object-fit: cover;
+    max-width: 100%;
+    height: 100%;
+    border-radius: $border_radius;
+    background-position: center;
+  }
+
+  p {
+    position: absolute;
+    color: $colorWriting_paragraph;
+    font-weight: 700;
+    padding-left: 2%;
+    max-width: 220px;
+
+    @media (max-width: 1000px) {
+      max-width: 150px;
     }
-   
-    .image_background_card{
-        object-fit: cover;
-        max-width: 100%;
-        height: 100%;   
-        border-radius: 10px;
-        background-position: center;
-    }
-    p{
-        position: absolute;
-        color:whitesmoke;
-        font-weight: 700;
-        padding-left: 2%;
-        max-width: 220px; 
-        @media (max-width:1000px){
-            max-width: 150px;
-        }
-    }
-    
-}
-@mixin underline_stopper {
-    text-decoration: none;
+  }
 }
 
+@mixin underline_stopper {
+  text-decoration: none;
+}
 
 /* Début du code sass */
 
-#root{
-    padding: 3% 5%;
+#root {
+  padding: 3% 5%;
 }
 
 /* Composant Banner*/
 
-.component_banner{
-color: $colorWriting;
-@include flex_maker();
-    img{
-        @include espacement_logo();
-    }
-    
+.component_banner {
+  color: $colorWriting;
+  @include flex_maker();
+  
+  img {
+    @include espacement_logo();
+  }
 }
-.nav_bar{
+
+.nav_bar {
+  text-decoration: none;
+  width: auto;
+  @include flex_maker();
+
+  p {
+    font-size: 24px;
+    font-weight: 700;
     text-decoration: none;
-    width: auto;
-    @include flex_maker();
-    p{
-        font-size: 24px;
-        font-weight: 700;
-        text-decoration: none;
-        color: #FF6060;
-        
-        &:hover{
-            text-decoration: underline;
-            cursor: pointer;
-        }
-        @media (max-width:520px)
-        {
-            font-size: 15px;
-        }
+    color: $colorWriting;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
     }
-    p.p_1{
-        margin-right: 50px;
+
+    @media (max-width: 520px) {
+      font-size: 15px;
     }
-    .underline_stop{
-        text-decoration: none;
-    }
-    @media (max-width:510px)
-    {
-       display: block;
-       margin: 0px;
-    }
+  }
+
+  p.p_1 {
+    margin-right: 50px;
+  }
+
+  .underline_stop {
+    text-decoration: none;
+  }
+
+  @media (max-width: 510px) {
+    display: block;
+    margin: 0px;
+  }
 }
 
 /* Composant footer */
 
-.component_footer{
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    min-height: 200px;
-    padding-top: 30px;
-    p{
-        @include font_footer()
-    }
-    img{
-        @include espacement_logo();
-    }
+.component_footer {
+  background-color: black;
+  @include flex_maker_column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 200px;
+  padding-top: 30px;
+
+  p {
+    @include font_footer();
+  }
+
+  img {
+    @include espacement_logo();
+  }
 }
 
 /* page d'accueil ps : le background image et son url sont gérés directement par le css*/
-.background_title{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../assets/IMG.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(95%);
-    border-radius: 25px
-}
-.home_title{
-    
-    height: 200px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    font-size: 48px;
 
-    @media (max-width:768px)
-    {
-        padding-left: 5%;
-    }
+.background_title {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../assets/IMG.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(95%);
+  border-radius: 25px;
 }
 
-.home_card{
-    @include card_menu();
+.home_title {
+  height: 200px;
+  color: $colorWriting_paragraph;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 48px;
+
+  @media (max-width: 768px) {
+    padding-left: 5%;
+  }
 }
 
-.card_logement{
-    @include card(); 
-    position: relative;
-    
+.home_card {
+  @include card_menu();
 }
 
+.card_logement {
+  @include card();
+  position: relative;
+}
 
-.background_card{
-    background-color: #f7f7f7;
-    border-radius: 25px;
-    margin-bottom: 30px;
-    @media (max-width:768px)
-    {
-       background-color: white;
-       padding: 0%;
-       margin: 0%;
-    }
+.background_card {
+  background-color: #f7f7f7;
+  border-radius: 25px;
+  margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    background-color: $colorWriting_paragraph;
+    padding: 0%;
+    margin: 0%;
+  }
 }
 
 /* intégration de la page about */
 
-.picture_about{
-    max-height: 200px;
-    width: 100%;
-    object-fit: cover;
-    object-position: 50% 47%;
-    border-radius: 25px;
-    filter: brightness(75%);
-    margin-top: 30px;
-}
-.liste_about{
-    @include flex_maker_column;
-    list-style-type: none;
-    width: 85%;
-    padding-left: 7%;
-    padding-right: 7%;
-    margin-top: 30px;
+.picture_about {
+  max-height: 200px;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 47%;
+  border-radius: 25px;
+  filter: brightness(75%);
+  margin-top: 30px;
 }
 
-.listing_about{
-    margin-bottom: 20px;
-    list-style-type: none;
+.liste_about {
+  @include flex_maker_column;
+  list-style-type: none;
+  width: 85%;
+  padding-left: 7%;
+  padding-right: 7%;
+  margin-top: 30px;
 }
 
-.div_about{
-    color: #FF6060;
-    background-color: #f7f7f7;
-    margin-top: auto;
-    max-height: auto;
-    border-radius: 10px; 
-    font-size: 20px;
-    padding-top: 2%;
-    padding-left: 2%;
-    padding-right: 2%;
-    content-visibility:auto;
-    /*animation: heightx 0.5s linear forwards ;
-    transition: height 2s cubic-bezier(0.4, 0, 0.2, 1)*/
-    
+.listing_about {
+  margin-bottom: 20px;
+  list-style-type: none;
+}
+
+.div_about {
+  color: $colorWriting;
+  background-color: #f7f7f7;
+  margin-top: auto;
+  max-height: auto;
+  border-radius: $border_radius;
+  font-size: 20px;
+  padding-top: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+  content-visibility: auto;
 }
 
 /*animation pour les collapses proposant plusieurs éléments en paragraphe */
-.multielement_about{
-    height: max-content;
-    animation: heightx 0.5s linear forwards ;
-    transition: height 2s cubic-bezier(0.4, 0, 0.2, 1)
+
+.multielement_about {
+  height: max-content;
+  animation: heightx 0.5s linear forwards;
+  transition: height 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 @keyframes heightx {
-    0%{
-        height: 0px;
-    } 
-    100%{
-        height: 30px;
-        
-    }
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 30px;
+  }
 }
-.closing_animation{
-    animation: heighty 1s ease forwards;
+
+.closing_animation {
+  animation: heighty 1s ease forwards;
 }
-@keyframes heighty{
-    
-    0%{
-        height: 30px; 
-    } 
-    100%{
-        height: 0px;
-    }
+
+@keyframes heighty {
+  0% {
+    height: 30px;
+  }
+  100% {
+    height: 0px;
+  }
 }
 
 /* animation pour les éléments ne contenant qu'un seul bloc */
 
-.onlyoneelement_about{
-    /*height: max-content;*/
-    animation: heightOnex 0.5s linear forwards ;
-    /*animation: heightOney 0.5s linear forwards ;*/
-    transition: height 2s cubic-bezier(0.4, 0, 0.2, 1)
+.onlyoneelement_about {
+  animation: heightOnex 0.5s linear forwards;
+  transition: height 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 @keyframes heightOnex {
-    0%{
-        height: 0px;
-    } 
-    100%{
-        height: 120px;
-        
-    }
-}
-.closing_animation{
-    animation: heightOney 1s ease forwards;
-}
-@keyframes heightOney{
-    
-    0%{
-        height: 120; 
-        
-    } 
-    100%{
-        height: 0px;
-        
-    }
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 120px;
+  }
 }
 
-.paragraphe_about{
-    padding-bottom: 2%;
+.closing_animation {
+  animation: heightOney 1s ease forwards;
 }
 
+@keyframes heightOney {
+  0% {
+    height: 120;
+  }
+  100% {
+    height: 0px;
+  }
+}
 
-
+.paragraphe_about {
+  padding-bottom: 2%;
+}
 
 .part_list_about {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #FF6060;
-    border-radius: 10px;
-    color: white;
-    padding-left: 2%;
-    padding-right: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $colorWriting;
+  border-radius: $border_radius;
+  color: $colorWriting_paragraph;
+  padding-left: 2%;
+  padding-right: 2%;
 }
-.icon_about{
- height: 14px;
- cursor: pointer;
- }
 
+.icon_about {
+  height: 14px;
+  cursor: pointer;
+}
 
-
-.active{
-    transform: rotate(-180deg);
-    transition: all 0.6s;
+.active {
+  transform: rotate(-180deg);
+  transition: all 0.6s;
 }
 
 /* intégration de la page erreur */
 
-.div_error{
-    @include flex_maker_column;
-   align-items: center;
-   justify-content: space-between;
-    color: #FF6060;
-    margin-top: 5%;
-    .underline_stop{ 
-        text-decoration: none;
-        color: #FF6060;
-        padding-top: 5%;
+.div_error {
+  @include flex_maker_column;
+  align-items: center;
+  justify-content: space-between;
+  color: $colorWriting;
+  margin-top: 5%;
+
+  .underline_stop {
+    text-decoration: none;
+    color: $colorWriting;
+    padding-top: 5%;
     text-decoration: underline;
+  }
 
- }
- .title_error
- {
-     font-weight: bold;
-     font-size: 288px;
-     margin: 0%;
-    
- }
- h2{
+  .title_error {
+    font-weight: bold;
+    font-size: 288px;
+    margin: 0%;
+  }
+
+  h2 {
     padding-top: 3%;
- }
-
+  }
 }
 
 /* intégration page logement */
 
-.logements_collapses{
-    @include flex_maker;
-}
-.description_collapse_logement, .equipements_collapse_logement{
-    width: 47%;
-    
+.logements_collapses {
+  @include flex_maker;
 }
 
-.rating_tags{
-   @include flex_maker;
-   align-items: center;
+.description_collapse_logement,
+.equipements_collapse_logement {
+  width: 47%;
 }
 
+.rating_tags {
+  @include flex_maker;
+  align-items: center;
+}
 
-.item_tags{
-    gap: 5%;
-    @include flex_maker;
-    p{
-    
-    background-color: #FF6060;
+.item_tags {
+  gap: 5%;
+  @include flex_maker;
+
+  p {
+    background-color: $colorWriting;
     padding: 1% 15%;
-    color: white;
+    color: $colorWriting_paragraph;
     white-space: nowrap;
-    border-radius:25px;
+    border-radius: 25px;
     @include flex_maker_column;
     justify-content: center;
     align-items: center;
-    
-    }
-}
-.item_rating{
-    @include flex_maker;
-    width: 12%;
-    img{
-        height: 30%;
-    };
+  }
 }
 
-.title_host{
-    @include flex_maker;
-    color: #FF6060;
-    h1{
-        font-size: 3em;
-        margin-bottom: 1%; 
-    }
-    .title_location{
-        width: 60%;
-    }
+.item_rating {
+  @include flex_maker;
+  width: 12%;
+
+  img {
+    height: 30%;
+  }
 }
-.name_picture{
-    @include flex_maker;
-    align-items: center;
-    width: 11%;
-    
-    .picture_logement{
-        border-radius: 50%;
-        height: 70%;
-    } 
-    
+
+.title_host {
+  @include flex_maker;
+  color: $colorWriting;
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 1%;
+  }
+
+  .title_location {
+    width: 60%;
+  }
+}
+
+.name_picture {
+  @include flex_maker;
+  align-items: center;
+  width: 11%;
+
+  .picture_logement {
+    border-radius: 50%;
+    height: 70%;
+  }
 }
 
 /* intégration du carouselle dans la page logement */
-.carousel{
-    padding-top: 2%;
-}
-.image_background_carousel{
-    height: 500px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.buttons_logement{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
-    height: 100%;
-    padding: 0% 2%;
-    .button_logement{
-        background-color:rgba(0,0,0,0);
-        border-style: none;
-    }
-    
-}
-.index_picture_logement{
-    position: relative;
-    left: 50%;
-    bottom: 10%;
-    color: white;
+
+.carousel {
+  padding-top: 2%;
 }
 
+.image_background_carousel {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+.buttons_logement {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0% 2%;
 
+  .button_logement {
+    background-color: rgba(0, 0, 0, 0);
+    border-style: none;
+  }
+}
 
-
-
-
-
+.index_picture_logement {
+  position: relative;
+  left: 50%;
+  bottom: 10%;
+  color: $colorWriting_paragraph;
+}

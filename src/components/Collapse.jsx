@@ -1,17 +1,12 @@
 import derouleur from "../assets/derouleur.png";
 import { useState } from "react";
-import { useEffect } from "react";
-
 
 function Collapse({titre, paragraphe, id}) {
 const [selected, setSelected] = useState(false);
-
-
-
-    
-function handleClick() {
-    setSelected(!selected);
-  } 
+   
+  function handleClick() {
+      setSelected(!selected);
+    } 
 
 return (
     
@@ -25,10 +20,12 @@ return (
         <div className="div_about">
           {Array.isArray(paragraphe) ? (
             paragraphe.map((paragraph, index) => (
-              <p id={id} key={index} className={`paragraphe_about ${Array.isArray(paragraphe) ? "multielement_about" : ''}`}>{paragraph}</p>
+              <p id={id} key={index} 
+              className={`paragraphe_about ${Array.isArray(paragraphe) ? "multielement_about" : ''}`}>{paragraph}</p>
             ))
           ) : (
-            <p id={id} className={`paragraphe_about onlyoneelement_about ${!selected ? 'closing_animation' : ''}`}>{paragraphe}</p>
+            <p id={id} 
+            className={`paragraphe_about onlyoneelement_about ${!selected ? 'closing_animation' : ''}`}>{paragraphe}</p>
           )}
         </div>
       )}

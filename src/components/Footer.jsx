@@ -13,7 +13,7 @@ function Footer() {
                 <img src={logo7} alt='troisième lettre'/>
                 <img src={logo8} alt='quatrième lettre'/>
             </div>
-            <p className=''>© 2020 Kasa. All rights reserved</p>
+            <p>© 2020 Kasa. All rights reserved</p>
         </div>
     )
 }
