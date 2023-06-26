@@ -226,7 +226,7 @@ $border_radius: 10px;
   width: 100%;
   object-fit: cover;
   object-position: 50% 47%;
-  border-radius: 25px;
+  border-radius: $border_radius;
   filter: brightness(75%);
   margin-top: 30px;
 }
@@ -247,8 +247,8 @@ $border_radius: 10px;
 .listing_about {
   margin-bottom: 20px;
   list-style-type: none;
-  @media (max-width:520px) {
-
+  @media (max-width:768px) {
+    width: 100%;
   }
 }
 
@@ -369,7 +369,7 @@ $border_radius: 10px;
   justify-content: space-around;
   color: $colorWriting;
   margin-top: 5%;
-  min-height: 700px;
+  min-height: 600px;
   
 
   .underline_stop {
@@ -408,27 +408,40 @@ $border_radius: 10px;
 
 .logements_collapses {
   @include flex_maker;
+  @media (max-width:768px) {
+    @include flex_maker_column;
+  }
 }
 
 .description_collapse_logement,
 .equipements_collapse_logement {
   width: 47%;
+  @media (max-width:768px) {
+    width: 100%;
+  }
 }
 
 .rating_tags {
   @include flex_maker;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .item_tags {
-  gap: 5%;
+  gap: 2%;
   @include flex_maker;
-
+  white-space: nowrap;
+  max-width: 50%;
+  @media (max-width:768px){
+    flex-wrap: wrap;
+  }
+  @media (max-width:520px){
+    flex-wrap: nowrap;
+  }
   p {
     background-color: $colorWriting;
-    padding: 1% 15%;
+    padding: 1% 10%;
     color: $colorWriting_paragraph;
-    white-space: nowrap;
     border-radius: 25px;
     @include flex_maker_column;
     justify-content: center;
@@ -438,8 +451,9 @@ $border_radius: 10px;
 
 .item_rating {
   @include flex_maker;
-  width: 12%;
-
+  @media (max-width:520px){
+    display: none;
+  }
   img {
     height: 30%;
   }
@@ -450,19 +464,17 @@ $border_radius: 10px;
   color: $colorWriting;
 
   h1 {
-    font-size: 3em;
+    
     margin-bottom: 1%;
-  }
-
-  .title_location {
-    width: 60%;
   }
 }
 
 .name_picture {
   @include flex_maker;
   align-items: center;
-  width: 11%;
+  @media (max-width:520px) {
+    display: none;
+  }
 
   .picture_logement {
     border-radius: 50%;
@@ -481,6 +493,10 @@ $border_radius: 10px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: $border_radius;
+  @media (max-width:768px){
+    max-height: 350px;
+  }
 }
 
 .buttons_logement {
@@ -490,10 +506,16 @@ $border_radius: 10px;
   align-items: center;
   height: 100%;
   padding: 0% 2%;
+  
 
   .button_logement {
     background-color: rgba(0, 0, 0, 0);
     border-style: none;
+    img{
+      @media (max-width:520px) {
+        height: 25px;
+      }
+    }
   }
 }
 
@@ -502,4 +524,34 @@ $border_radius: 10px;
   left: 50%;
   bottom: 10%;
   color: $colorWriting_paragraph;
+}
+
+
+/* modification de la page logement avec les media queries */ 
+
+.new_bar{
+  display: none;
+  @media (max-width:520px) {
+    @include flex_maker;
+    align-items: center;
+    margin-bottom: 2.5%;
+  }
+  .new_item_rating{
+    @include flex_maker;
+    gap: 10%;
+    img{
+      height: 15px;
+    }
+  }
+  .new_name_picture{
+    color: $colorWriting;
+    @include flex_maker;
+    align-items: center;
+    justify-content: space-around;
+    width: 35%;
+  }
+  .new_picture_logement{
+    border-radius: 50%;
+    height: 45px;
+  }
 }

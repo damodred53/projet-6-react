@@ -49,10 +49,6 @@ function Logement() {
           </div>
         </div>
 
-        <div>
-          
-        </div>
-
         <div className='rating_tags'>
           <div className='item_tags'>
             {researchItem.tags.map((tag, index) => (
@@ -63,6 +59,26 @@ function Logement() {
             <Étoiles starsfull={researchItem.rating} />
           </div>
         </div>
+
+
+
+
+        <div className='new_bar'>
+          <div className='new_item_rating'>
+            <Étoiles starsfull={researchItem.rating} />
+          </div>
+          <div className='new_name_picture'>
+            <p className='new_name'>{researchItem.host.name}</p>
+            <img
+              className='new_picture_logement'
+              src={researchItem.host.picture}
+              alt={researchItem.title}
+            ></img>
+          </div>
+        </div>
+
+
+
 
         <div className='logements_collapses'>
           <div className='description_collapse_logement'>
