@@ -1,13 +1,16 @@
 import derouleur from "../assets/derouleur.png";
-import { useState, useRef } from "react";
+import { useState} from "react";
 
 function Collapse({ titre, paragraphe, id }) {
  
   const [selected, setSelected] = useState(false);
   const [count, setCount] = useState(0);
+
+ 
+
   function handleClick() {
-    
-      setCount(count +1);
+
+    setCount(count +1);
     setSelected(!selected);
   }
 
@@ -16,7 +19,7 @@ function Collapse({ titre, paragraphe, id }) {
       <div className="part_list_about">
         <h2 className="title_about">{titre}</h2>
         <img
-          className={`icon_about ${selected ? 'active' : ''}`}
+          className={`icon_about ${selected  ? 'active' : ''} ${!selected && count>0 ? 'inactive':""}`}
           id={id}
           src={derouleur}
           alt="derouleur"

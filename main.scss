@@ -162,9 +162,16 @@ $border_radius: 10px;
   align-items: center;
   min-height: 200px;
   padding-top: 30px;
-
+  @media (max-width:520px){
+    justify-content: center;
+  }
   p {
     @include font_footer();
+    @media(max-width:520px) {
+        font-size: 12px;
+        text-align: center;
+        width: 30%;
+    }
   }
 
   img {
@@ -267,7 +274,7 @@ $border_radius: 10px;
 
 .multielement_about {
   height: max-content;
-  animation: heightx 0.5s linear forwards;
+  animation: heightx 0.3s linear forwards;
   transition: height 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -298,8 +305,9 @@ $border_radius: 10px;
 /* animation pour les éléments ne contenant qu'un seul bloc */
 
 .onlyoneelement_about {
-  animation: heightOnex 0.5s linear forwards;
+  animation: heightOnex 0.3s linear forwards;
   transition: height 2s cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 @keyframes heightOnex {
@@ -361,10 +369,10 @@ $border_radius: 10px;
   transform: rotate(-180deg);
   transition: all 0.6s;
 }
-/*.inactive {
-  transform: rotate(-180deg);
+.inactive {
+  transform: rotate(0deg);
   transition: all 0.6s;
-}*/
+}
 
 /* intégration de la page erreur */
 
