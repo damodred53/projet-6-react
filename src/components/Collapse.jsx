@@ -11,10 +11,14 @@ function Collapse({ titre, paragraphe, id }) {
     if (ref.current) {
       setRefHeight(ref.current.scrollHeight);
     }
+
   }, [selected]);
 
   function handleClick(event) {
+    setCount(count + 1)
     setSelected(!selected);
+    console.log(ref.current);
+    console.log(count)
   }
 
   return (
@@ -29,17 +33,17 @@ function Collapse({ titre, paragraphe, id }) {
           onClick={(event) => handleClick(refHeight)}
         />
       </div>
-      <div className={`div_about_supp ${!selected && count > 0 ? 'closing_animation' : ''}`}>
+      <div className={`div_about_supp ${!selected  && count > 0 ? 'closing_animation' : ''}`}>
         {selected && (
-          <div className="div_about paragraphe_about">
-            {Array.isArray(paragraphe) ? (
+          
+            Array.isArray(paragraphe) ? (
               paragraphe.map((paragraph, index) => (
                 <p
                   id={id}
                   key={index}
-                  className={`paragraphe_about ${Array.isArray(paragraphe) ? "multielement_about" : ''}`}
+                  className={` ${Array.isArray(paragraphe) ? "multielement_about" : ''}`}
                   ref={ref}
-                  style={selected ? { height: refHeight + "px" } : { height: "0px" }}
+                  style={selected ? { height: refHeight.current + "px" } : { height: "0px" }}
                 >
                   
                     {paragraph}
@@ -49,14 +53,17 @@ function Collapse({ titre, paragraphe, id }) {
             ) : (
               <p
                 id={id}
-                className={`paragraphe_about onlyoneelement_about ${!selected ? 'closing_animation' : ''}`}
+                className={` onlyoneelement_about `}
                 ref={ref}
-                style={selected ? { height: refHeight + "px" } : { height: "0px" }}
+                style={{
+                  height: selected ? `${refHeight}px` : "0px",
+                 
+                }}
               >
                 {paragraphe}
               </p>
-            )}
-          </div>
+            )
+          
         )}
       </div>
     </div>

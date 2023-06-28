@@ -235,24 +235,24 @@
   }
 }
 
-.div_about {
+.div_about_supp {
   color: #FF6060;
   background-color: #f7f7f7;
   margin-top: auto;
   /*max-height: auto;*/
   border-radius: 10px;
   font-size: 17px;
-  padding-top: 2%;
+  /*padding-top: 2%;*/
   padding-left: 2%;
   padding-right: 2%;
   content-visibility: auto;
-  animation: height 0.3s ease;
+  /*animation: height 3s ease;*/
 }
 
 /*animation pour les collapses proposant plusieurs éléments en paragraphe */
 .multielement_about {
   height: max-content;
-  animation: heightx 0.3s linear forwards;
+  animation: height 0.3s linear forwards;
   transition: height ease 0.9;
 }
 
@@ -264,15 +264,9 @@
     height: 15px;
   }
 }
-.closing_animation {
-  animation: heighty 1s ease forwards;
-  background-color: #f7f7f7;
-  border-radius: 10px;
-}
-
 @keyframes heighty {
   0% {
-    height: 15px;
+    height: auto;
   }
   100% {
     height: 0px;
@@ -280,8 +274,8 @@
 }
 /* animation pour les éléments ne contenant qu'un seul bloc */
 .onlyoneelement_about {
-  animation: heightOnex 0.7s linear forwards;
-  transition: height 2s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: heightOnex 1s linear forwards;
+  /*transition: height 2s cubic-bezier(0.4, 0, 0.2, 1);*/
 }
 
 @keyframes heightOnex {
@@ -289,31 +283,30 @@
     max-height: 0px;
   }
   100% {
-    max-height: max-content;
+    max-height: 500px;
   }
 }
 .closing_animation {
   animation: heightOney 1s ease forwards;
+  background-color: #f7f7f7;
+  border-radius: 10px;
 }
 
 @keyframes heightOney {
   0% {
-    max-height: 0px;
+    max-height: 500px;
   }
   100% {
-    max-height: max-content;
+    max-height: 0px;
   }
 }
-.paragraphe_about {
+/*.paragraphe_about {
   padding-bottom: 2%;
   overflow-y: hidden;
-}
-@media (max-width: 520px) {
-  .paragraphe_about {
+  @media (max-width:520px) {
     font-size: 14px;
   }
-}
-
+}*/
 .part_list_about {
   display: flex;
   justify-content: space-between;
