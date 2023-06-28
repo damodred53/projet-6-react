@@ -82,7 +82,7 @@ function Logement() {
 
         <div className='logements_collapses'>
           <div className='description_collapse_logement'>
-            <Collapse titre='Description' paragraphe={researchItem.description} />
+            <Collapse titre='Description' paragraphe={researchItem.description} className=""/>
           </div>
 
           <div className='equipements_collapse_logement'>

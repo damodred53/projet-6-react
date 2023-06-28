@@ -5,28 +5,17 @@ function Collapse({ titre, paragraphe, id }) {
   const ref = useRef();
   const [selected, setSelected] = useState(false);
   const [count, setCount] = useState(0);
-  const [refHeight, setrefHeight] = useState(0);
+  const [refHeight, setRefHeight] = useState(0);
 
   useEffect(() => {
     if (ref.current) {
-      setrefHeight(ref.current.scrollHeight);
-      const divHeight = document.querySelector('.div_about').style.height = refHeight +'px';
-      console.log(divHeight.height)
-    /*divHeight.style.height = refHeight;*/
+      setRefHeight(ref.current.scrollHeight);
     }
-  }, [selected, refHeight]);
-
-
-   
+  }, [selected]);
 
   function handleClick(event) {
-    
-
     setSelected(!selected);
-    
   }
-
-  
 
   return (
     <div className="listing_about">
@@ -42,9 +31,28 @@ function Collapse({ titre, paragraphe, id }) {
       </div>
       <div className={`div_about_supp ${!selected && count > 0 ? 'closing_animation' : ''}`}>
         {selected && (
-          <div className="div_about paragraphe_about" >
-            {paragraphe && (
-              <p id={id} className="multielement_about" ref={ref}>
+          <div className="div_about paragraphe_about">
+            {Array.isArray(paragraphe) ? (
+              paragraphe.map((paragraph, index) => (
+                <p
+                  id={id}
+                  key={index}
+                  className={`paragraphe_about ${Array.isArray(paragraphe) ? "multielement_about" : ''}`}
+                  ref={ref}
+                  style={selected ? { height: refHeight + "px" } : { height: "0px" }}
+                >
+                  
+                    {paragraph}
+                  
+                </p>
+              ))
+            ) : (
+              <p
+                id={id}
+                className={`paragraphe_about onlyoneelement_about ${!selected ? 'closing_animation' : ''}`}
+                ref={ref}
+                style={selected ? { height: refHeight + "px" } : { height: "0px" }}
+              >
                 {paragraphe}
               </p>
             )}
