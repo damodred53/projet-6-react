@@ -261,13 +261,14 @@ $border_radius: 10px;
   color: $colorWriting;
   background-color: #f7f7f7;
   margin-top: auto;
-  max-height: auto;
+  /*max-height: auto;*/
   border-radius: $border_radius;
-  font-size: 20px;
+  font-size: 17px;
   padding-top: 2%;
   padding-left: 2%;
   padding-right: 2%;
   content-visibility: auto;
+  animation: height 0.3s ease;
 }
 
 /*animation pour les collapses proposant plusieurs éléments en paragraphe */
@@ -275,7 +276,7 @@ $border_radius: 10px;
 .multielement_about {
   height: max-content;
   animation: heightx 0.3s linear forwards;
-  transition: height 2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: height ease 0.9 
 }
 
 @keyframes heightx {
@@ -283,7 +284,7 @@ $border_radius: 10px;
     height: 0px;
   }
   100% {
-    height: 30px;
+    height: 15px;
   }
 }
 
@@ -295,7 +296,7 @@ $border_radius: 10px;
 
 @keyframes heighty {
   0% {
-    height: 30px;
+    height: 15px;
   }
   100% {
     height: 0px;
@@ -305,17 +306,18 @@ $border_radius: 10px;
 /* animation pour les éléments ne contenant qu'un seul bloc */
 
 .onlyoneelement_about {
-  animation: heightOnex 0.3s linear forwards;
+  animation: heightOnex  0.7s  linear forwards;
   transition: height 2s cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
 @keyframes heightOnex {
   0% {
-    height: 0px;
+    max-height: 0px;
   }
+  
   100% {
-    height: 120px;
+    max-height: max-content;
   }
 }
 
@@ -325,16 +327,17 @@ $border_radius: 10px;
 
 @keyframes heightOney {
   0% {
-    height: 120px;
+    max-height: 0px;
+  
   }
   100% {
-    height: 0px;
+    max-height: max-content;
   }
 }
 
 .paragraphe_about {
   padding-bottom: 2%;
-  overflow-y: auto;
+  overflow-y: hidden;
   @media (max-width:520px) {
     font-size: 14px;
   }
