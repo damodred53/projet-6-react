@@ -38,10 +38,10 @@ function Collapse({ titre, paragraphe, id }) {
           
             Array.isArray(paragraphe) ? (
               paragraphe.map((paragraph, index) => (
-                <p
+                <p 
                   id={id}
                   key={index}
-                  className={` ${Array.isArray(paragraphe) ? "multielement_about" : ''}`}
+                  className={` ${Array.isArray(paragraphe) ? "multielement_about" : ''} `}
                   ref={ref}
                   style={selected ? { height: refHeight.current + "px" } : { height: "0px" }}
                 >

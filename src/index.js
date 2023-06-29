@@ -22,16 +22,16 @@ root.render(
             <Route path="/logement" element={<Logement/>} />
             <Route path="/logement/:id" element={<Logement/>} />
           </Routes>
-          <Footer />
+          
     </Router>
   </React.StrictMode>
 );
 
 
-/*const footer = ReactDOM.createRoot(document.getElementById('footer_kasa'));
+const footer = ReactDOM.createRoot(document.getElementById('footer_kasa'));
 footer.render(
   <Footer />
-);*/
+);
 
 
 // If you want to start measuring performance in your app, pass a function
