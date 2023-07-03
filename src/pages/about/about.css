@@ -244,20 +244,16 @@
   color: #FF6060;
   background-color: #f7f7f7;
   margin-top: auto;
-  /*max-height: auto;*/
   border-radius: 10px;
   font-size: 17px;
-  /*padding-top: 2%;*/
   padding-left: 2%;
   padding-right: 2%;
   content-visibility: auto;
-  /*animation: height 3s ease;*/
 }
 
 /*animation pour les collapses proposant plusieurs éléments en paragraphe */
 .multielement_about {
   animation: heightOnex 4s linear forwards;
-  /*transition: height ease 0.9 */
 }
 
 @keyframes heightx {
@@ -279,7 +275,6 @@
 /* animation pour les éléments ne contenant qu'un seul bloc */
 .onlyoneelement_about {
   animation: heightOnex 1s linear forwards;
-  /*transition: height 2s cubic-bezier(0.4, 0, 0.2, 1);*/
 }
 
 @keyframes heightOnex {

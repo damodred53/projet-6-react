@@ -14,11 +14,9 @@ function Collapse({ titre, paragraphe, id }) {
 
   }, [selected]);
 
-  function handleClick(event) {
+  function handleClick() {
     setCount(count + 1)
     setSelected(!selected);
-    console.log(ref.current);
-    console.log(count)
   }
 
   return (
@@ -30,7 +28,7 @@ function Collapse({ titre, paragraphe, id }) {
           id={id}
           src={derouleur}
           alt="derouleur"
-          onClick={(event) => handleClick(refHeight)}
+          onClick={() => handleClick(refHeight)}
         />
       </div>
       <div className={`div_about_supp ${!selected  && count > 0 ? 'closing_animation' : ''}`}>
@@ -41,7 +39,7 @@ function Collapse({ titre, paragraphe, id }) {
                 <p 
                   id={id}
                   key={index}
-                  className={` ${Array.isArray(paragraphe) ? "multielement_about" : ''} `}
+                  className="multielement_about" 
                   ref={ref}
                   style={selected ? { height: refHeight.current + "px" } : { height: "0px" }}
                 >
@@ -56,7 +54,7 @@ function Collapse({ titre, paragraphe, id }) {
                 className={` onlyoneelement_about `}
                 ref={ref}
                 style={{
-                  height: selected ? `${refHeight}px` : "0px",
+                  height: selected ? `${refHeight+5}%` : "0px",
                  
                 }}
               >
